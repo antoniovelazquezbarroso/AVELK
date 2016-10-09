@@ -12,14 +12,14 @@ Vagrant.configure(2) do |config|
     logger.vm.hostname = "logger"    
     logger.vm.network :private_network, ip: "192.168.2.55"
 
-#    logger.vm.provision "ansible" do |ansible|
-#      ansible.playbook = "./playbooks/logger/playbook.yml"
-#      ansible.inventory_path = "./playbooks/logger/inventory"
-#      ansible.extra_vars = {
-#        ansible_ssh_user: 'vagrant',
-#        ansible_ssh_private_key_file: "~/.vagrant.d/insecure_private_key"
-#      }
-#    end
+    logger.vm.provision "ansible" do |ansible|
+      ansible.playbook = "./playbooks/logger/playbook.yml"
+      ansible.inventory_path = "./playbooks/logger/inventory"
+      ansible.extra_vars = {
+        ansible_ssh_user: 'vagrant',
+        ansible_ssh_private_key_file: "~/.vagrant.d/insecure_private_key"
+      }
+    end
 
   end
 
@@ -28,14 +28,14 @@ Vagrant.configure(2) do |config|
     shipper.vm.hostname = "shipper"    
     shipper.vm.network :private_network, ip: "192.168.2.60"
 
-#    shipper.vm.provision "ansible" do |ansible|
-#      ansible.playbook = "./playbooks/shipper/playbook.yml"
-#      ansible.inventory_path = "./playbooks/shipper/inventory"
-#      ansible.extra_vars = {
-#        ansible_ssh_user: 'vagrant',
-#        ansible_ssh_private_key_file: "~/.vagrant.d/insecure_private_key"
-#      }
-#    end
+    shipper.vm.provision "ansible" do |ansible|
+      ansible.playbook = "./playbooks/shipper/playbook.yml"
+      ansible.inventory_path = "./playbooks/shipper/inventory"
+      ansible.extra_vars = {
+        ansible_ssh_user: 'vagrant',
+        ansible_ssh_private_key_file: "~/.vagrant.d/insecure_private_key"
+      }
+    end
 
   end
 
