@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "logger" do |logger|
     logger.vm.box = "geerlingguy/ubuntu1404"
     logger.vm.hostname = "logger"    
-    logger.vm.network :private_network, ip: "192.168.2.55"
+    logger.vm.network :private_network, ip: "192.168.2.35"
 
     logger.vm.provision "ansible" do |ansible|
       ansible.playbook = "./playbooks/logger/playbook.yml"
@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "shipper" do |shipper|
     shipper.vm.box = "geerlingguy/ubuntu1404"
     shipper.vm.hostname = "shipper"    
-    shipper.vm.network :private_network, ip: "192.168.2.60"
+    shipper.vm.network :private_network, ip: "192.168.2.40"
 
     shipper.vm.provision "ansible" do |ansible|
       ansible.playbook = "./playbooks/shipper/playbook.yml"
