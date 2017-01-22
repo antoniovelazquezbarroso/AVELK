@@ -1,0 +1,18 @@
+---
+  hosts: shipper
+  become: yes
+
+  tasks:
+
+    - name: Add Rsyslogd configuration
+	    copy:
+	      src: "{{ item }}"
+	      dest: "/etc/rsyslog.d/"
+	      owner: root
+	      group: root
+	      mode: 0644
+	    with_items:
+	    - files/rsyslog/34-rsyslogd-forwarding.conf
+	    - files/rsyslog/35-rsyslogd-nginx_acces_log.conf
+	    - files/rsyslog/36-rsyslogd-nginx_error_log.conf
+	    notify: restart rsyslog #does not exist yet

@@ -1,4 +1,4 @@
 .vagrant
 .DS_Store
-playbooks/logger/playbook.retry
-playbooks/shipper/playbook.retry
+playbooks/logger/*.retry
+playbooks/shipper/*.retry

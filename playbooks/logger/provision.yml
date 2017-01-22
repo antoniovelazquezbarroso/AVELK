@@ -1,5 +1,4 @@
 ---
-
 - hosts: logger
   gather_facts: yes
   become: yes
@@ -17,3 +16,4 @@
     - geerlingguy.elasticsearch-curator
     - geerlingguy.kibana
     - geerlingguy.logstash
+

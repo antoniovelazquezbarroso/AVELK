@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
     logger.vm.network :private_network, ip: "192.168.2.35"
 
     logger.vm.provision "ansible" do |ansible|
-      ansible.playbook = "./playbooks/logger/playbook.yml"
+      ansible.playbook = "./playbooks/logger/main.yml"
       ansible.inventory_path = "./playbooks/logger/inventory"
       ansible.extra_vars = {
         ansible_ssh_user: 'vagrant',
